@@ -1,0 +1,36 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+<div id="challenge02">
+    <div>
+        <button v-on:click="showAlert($event)">Click Here</button>
+    </div>
+    <hr>
+    <div>
+        <input type="text" v-on:keyup="value = $event.target.value">
+        <p>{{ value }}</p>
+    </div>
+
+    <div>
+        <input type="text" v-on:keydown.enter="setValue">
+        <p>{{ value }} </p>
+    </div>
+</div>
+
+
+<script>
+    new Vue({
+        el: '#challenge02',
+        data: {
+            value: ''
+        },
+        methods: {
+            showAlert() {
+                alert('Alert button')
+            },
+            setValue(event){
+                this.value = event.target.value;
+            }
+        },
+    })
+</script>
