@@ -3,8 +3,12 @@
 
 <div id="app">
     <p>{{count}} </p>
-    <button v-on:click="sum(1, $event)">Sum 1</button>
-    <p v-on:mousemove="updateXY">Mouse: {{x}} e {{y}}</p>
+    <button v-on:click="sum(5, $event)">Sum 5</button>
+    <p v-on:mousemove="updateXY">
+        Mouse: {{x}} e {{y}}
+        <span v-on:mousemove.stop="">Stop Here !!!</span>
+    </p>
+    <a v-on:click="" href="http://google.com">Google</a>
 </div>
 
 <script>
@@ -23,6 +27,12 @@
             updateXY() {
                 this.x = event.clientX
                 this.y = event.clientY
+            },
+            stop(event) {
+                event.stoPropagation();
+            },
+            dontNavigate(event){
+                event.preventDefault()
             }
         },
     })
