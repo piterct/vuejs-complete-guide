@@ -1,0 +1,41 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+<div id="challenge">
+    <p>Name: {{name}} </p>
+    <p>{{calculateAge()}} </p>
+    <p>Numbers Random: {{getRandom(0,1)}}</p>
+    <input type="text" v-bind:value="name" >
+    <br>
+    <br>
+    <img v-bind:src="imageLink" alt="Vue Js" height="400">
+    
+</div>
+
+
+
+<script>
+    new Vue({
+        el: '#challenge',
+        data: {
+            name: 'Michael Peter',
+            age: 26,
+            imageLink: 'https://miro.medium.com/max/2876/1*MoHYZRrpQcOociJZTo83zg.png',
+
+        },
+        methods: {
+            calculateAge: function () {
+                return this.age * 3
+            },
+
+            getRandom: function (min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min)) + min;
+            },
+            getName: function(event){
+                return this.name = event.target.value
+            }
+        },
+    })
+</script>
