@@ -2,7 +2,7 @@
 
 
 <div id="app">
-    <p>{{title}} </p>
+    <p v-once>{{title}} </p>
     <p> {{salutation()}}</p>
     <a v-bind:href="link"> Google </a>
 </div>
@@ -16,7 +16,7 @@
         },
         methods: {
             salutation: function () {
-                this.title = 'Good Morning!!!'
+                this.title = 'Good Morning !!!'
                 return this.title
             }
         }
