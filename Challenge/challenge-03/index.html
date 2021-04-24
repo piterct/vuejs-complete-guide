@@ -1,0 +1,18 @@
+<script src="https://unpkg.com/vue"></script>
+
+<div id="challenge03">
+    <!-- 1) Show in "result" the text 'Different Value' while
+        "value" is different 37 - "value" is updated by buttons.
+        Show 'Equal Value' when "value" is equal 37 -->
+
+    <!-- 2) Watch the changes  "result" and restart "value"
+        to 0 after 5 seconds (tip: setTimeout(..., 5000) -->
+    <div>
+        <p>Value: {{ value }}</p>
+        <button @click="value += 5">Sum 5</button>
+        <button @click="value += 1">Sum 1</button>
+        <p>{{ result }}</p>
+    </div>
+
+</div>
+<script src="app.js"></script>
