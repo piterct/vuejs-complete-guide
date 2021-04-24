@@ -1,0 +1,25 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+<div id="app">
+    <p>{{count }} </p>
+    <p>{{count > 10 ? 'Greater than 10' : count == 10 ? '' : 'Less than 10' }} </p>
+    <button v-on:click="sum">Sum </button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            count: 0,
+
+        },
+        methods: {
+            sum(passo, event) {
+                console.log(passo, event);
+                this.count++
+            }
+
+        },
+    })
+</script>
