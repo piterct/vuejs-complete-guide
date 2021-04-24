@@ -1,6 +1,18 @@
 new Vue({
-    el: '#desafio',
+    el: '#challenge03',
     data: {
-        valor: 0
+        value: 0
+    },
+    computed: {
+        result() {
+            return this.value == 37 ? 'Value is equal 37' : 'Value is different from 37'
+        }
+    },
+    watch: {
+        result() {
+            setTimeout(() => {
+                this.value = 0
+            }, 5000)
+        }
     }
 });
