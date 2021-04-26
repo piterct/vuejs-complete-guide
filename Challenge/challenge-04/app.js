@@ -17,7 +17,7 @@ new Vue({
 	methods: {
 		startEffect() {
 			setInterval(() => {
-				this.class1 = this.class1 == 'highlight' ? 'shrink' : 'highlight'
+				this.class1 = this.class1 == 'highlight' ? 'shrink' :  'highlight'
 			}, 1000)
 		},
 		startProgress() {
