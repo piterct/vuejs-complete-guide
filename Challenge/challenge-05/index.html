@@ -8,11 +8,11 @@
 
   <h2>#01</h2>
   <div>
-    <button>Alternate</button>
-    <p>Do you want to see me ...</p>
-    <p>...or I</p>
-    <p>Do you want to see me...</p>
-    <p>...or I</p>
+    <button @click="expression = !expression">Alternate</button>
+    <p v-if="expression"> You want to see me ...</p>
+    <p v-else>...or I</p>
+    <p v-show="expression"> You want to see me...</p>
+    <p v-show="!expression">...or I</p>
   </div>
 
   <!-- 2) 
@@ -21,7 +21,7 @@
   -->
   <h2>#02</h2>
   <ul>
-    <li></li>
+    <li v-for="(name, i ) in names">{{ name }} -- {{ i }}</li>
   </ul>
 
   <!-- 3) 
@@ -35,7 +35,8 @@
     Print  also  each  item index. -->
   <h2>#03</h2>
   <ul>
-    <li></li>
+    <li v-for="(value, key, index) in book">
+      {{ key }}: {{ value }} - {{ index + 1 }}</li>
   </ul>
 
   <!-- 4) Print the next object (only the values) and
@@ -48,8 +49,20 @@
     (tip: use v-for and v-if in the resolution ) -->
   <h2>#04</h2>
   <ul>
-    <li>
+    <li v-for="value in student">
 
+      <template v-if="!Array.isArray(value)">
+        {{ value }}
+      </template>
+
+      <template v-else>
+        Grades:
+        <ul>
+          <li v-for="grade in value"> {{ grade }} </li>
+        </ul>
+      </template>
     </li>
   </ul>
 </div>
+
+<script src="app.js"></script>
