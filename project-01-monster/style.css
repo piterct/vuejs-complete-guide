@@ -50,3 +50,20 @@ html {
 .life-bar .life.danger {
     background-color: red;
 }
+
+/* Area Result */
+
+.result {
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.result .won {
+    color: green
+}
+
+.result .lose {
+    color: red;
+}
