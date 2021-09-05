@@ -9,14 +9,22 @@
 </head>
 
 <body>
-    <div id="app">
-        <div class="panel scores"></div>
+    <div id="gameApp">
+        <div class="panel scores">
+            <div class="score">
+                <h1>Player</h1>
+                <div class="life-bar">
+                    <div class="life"></div>
+                </div>
+                <div>{{ playerLife }} %</div>
+            </div>
+        </div>
         <div class="panel result"></div>
         <div class="panel buttons"></div>
         <div class="panel logs"></div>
 
     </div>
-    <script scr="app.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
