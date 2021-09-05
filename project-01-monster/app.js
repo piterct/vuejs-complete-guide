@@ -3,7 +3,7 @@ new Vue({
     data: {
         running: false,
         playerLife: 100,
-        monsterlife: 0,
+        monsterlife: 100,
     },
     computed: {
         hasResult() {
@@ -11,7 +11,11 @@ new Vue({
         }
     },
     methods: {
-
+        startGame() {
+            this.running = true
+            this.playerLife = 100
+            this.monsterlife = 100
+        }
     },
     watch: {
 
