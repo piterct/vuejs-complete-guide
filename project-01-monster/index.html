@@ -14,14 +14,14 @@
             <div class="score">
                 <h1>Player</h1>
                 <div class="life-bar">
-                    <div class="life"></div>
+                    <div class="life " :class="{danger: playerLife < 20}" :style="{width: playerLife + '%'}"></div>
                 </div>
                 <div>{{ playerLife }} %</div>
             </div>
             <div class="score">
                 <h1>Monster</h1>
                 <div class="life-bar">
-                    <div class="life"></div>
+                    <div class="life " :class="{danger: monsterlife < 20}" :style="{width: monsterlife + '%'}"></div>
                 </div>
                 <div>{{ monsterlife }} %</div>
             </div>
