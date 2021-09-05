@@ -1,6 +1,7 @@
 new Vue({
     el: '#gameApp',
     data: {
+        running: false,
         playerLife: 100,
         monsterlife: 0,
     },
