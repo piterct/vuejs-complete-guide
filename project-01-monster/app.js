@@ -17,7 +17,7 @@ new Vue({
             this.monsterlife = 100
         },
         attack(especial) {
-            this.hurt(7,12, false);
+            this.hurt(7, 12, especial);
         },
         hurt(min, max, especial) {
             const plus = especial ? 5 : 0
@@ -30,6 +30,8 @@ new Vue({
         }
     },
     watch: {
-
+        hasResult(value) {
+            if (value) this.running = false
+        }
     }
 })
