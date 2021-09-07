@@ -19,13 +19,15 @@ new Vue({
         },
         attack(especial) {
             this.hurt('monsterlife', 5, 10, especial, 'Player', 'Monster', 'player');
-            
-            this.hurt('playerLife', 7, 12, false, 'Monster', 'Player', 'monster');
+            if (this.monsterlife > 0) {
+                this.hurt('playerLife', 7, 12, false, 'Monster', 'Player', 'monster');
+            }
         },
         hurt(property, min, max, especial, source, target, cls) {
             const plus = especial ? 5 : 0
             const hurt = this.getRandom(min + plus, max + plus)
             this[property] = Math.max(this[property] - hurt, 0)
+            this.registerLog(`${source} hit the  ${target} with ${hurt}.`, cls )
         },
         healAndHurt() {
             this.heal(10, 15)
