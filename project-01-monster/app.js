@@ -4,6 +4,7 @@ new Vue({
         running: false,
         playerLife: 100,
         monsterlife: 100,
+        logs: []
     },
     computed: {
         hasResult() {
@@ -17,10 +18,11 @@ new Vue({
             this.monsterlife = 100
         },
         attack(especial) {
-            this.hurt('monsterlife', 5, 10, especial);
-            this.hurt('playerLife', 7, 12, false);
+            this.hurt('monsterlife', 5, 10, especial, 'Player', 'Monster', 'player');
+            
+            this.hurt('playerLife', 7, 12, false, 'Monster', 'Player', 'monster');
         },
-        hurt(property, min, max, especial) {
+        hurt(property, min, max, especial, source, target, cls) {
             const plus = especial ? 5 : 0
             const hurt = this.getRandom(min + plus, max + plus)
             this[property] = Math.max(this[property] - hurt, 0)
@@ -36,6 +38,9 @@ new Vue({
         getRandom(min, max) {
             const value = Math.random() * (max - min) + min
             return Math.round(value);
+        },
+        registerLog(text, cls) {
+            this.logs.unshift({ text, cls })
         }
     },
     watch: {
