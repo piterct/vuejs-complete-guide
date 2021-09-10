@@ -3,8 +3,34 @@
 <div id="app"></div>
 
 <script>
-    function MyVue(parms){
+    function MyVue(params){
         this.$el = document.querySelector(params.el)
         this.$data = params.data
+
+        for(let atr in this.$data){
+            Object.defineProperty(this, atr,{
+                get: () =>{
+                    return this.$data[atr]
+                },
+                set: value => {
+                    this.$data[atr] = value
+                }
+            })
+        }
     }
+
+    const vm = new MyVue({
+        el:'#app',
+        data: {
+            name: 'Maria',
+            middleName: 'Silva'
+        }
+    })
+
+    console.log(vm.name)
+    console.log(vm.$data.name)
+
+    vm.name = 'Pedro'
+    console.log(vm.$data.name)
+
 </script>
