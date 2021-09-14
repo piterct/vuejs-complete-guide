@@ -3,18 +3,33 @@
 <script src="https://unpkg.com/vue"></script>
 
 <div id="app">
-    {{lesson}}
+    <h1 ref="lessonRef">{{lesson}}</h1>
     <h2>{{module}}</h2>
-    <button @click="alterModule">Alter Module</button>
     <button @click="alterLesson">Alter Lesson</button>
+    <button @click="alterModule">Alter Module</button>
+
 </div>
 
 <script>
     const vm = new Vue({
         el: '#app',
-        data:{
+        data: {
             lesson: "Lesson: Using Refs",
             module: "Module: Vue Instance"
+        },
+        methods: {
+            alterLesson() {
+                this.lesson += '#'
+
+            },
+            alterModule() {
+                this.module += '#'
+                console.log(this.$refs.lessonRef.innerText)
+            },
+
         }
     })
+
+  //  vm.$refs.lessonRef.innerText = 'Directly altered :('
+    
 </script>
