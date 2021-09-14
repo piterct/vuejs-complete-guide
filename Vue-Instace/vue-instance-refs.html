@@ -5,4 +5,16 @@
 <div id="app">
     {{lesson}}
     <h2>{{module}}</h2>
+    <button @click="alterModule">Alter Module</button>
+    <button @click="alterLesson">Alter Lesson</button>
 </div>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data:{
+            lesson: "Lesson: Using Refs",
+            module: "Module: Vue Instance"
+        }
+    })
+</script>
