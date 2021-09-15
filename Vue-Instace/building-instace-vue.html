@@ -2,16 +2,18 @@
 
 <script src="https://unpkg.com/vue"></script>
 
-<div id="app">
-    <h1>{{lesson}}</h1>
-    <h2>{{module}}</h2>
-    <button @click="alterLesson">Alter Lesson</button>
-    <button @click="alterModule">Alter Module</button>
-
-</div>
+<div id="app"></div>
 
 <script>
     const vm = new Vue({
+        template: `
+        <div>
+       <h1>{{lesson}}</h1>
+       <h2>{{module}}</h2>
+       <button @click="alterLesson">Alter Lesson</button>
+       <button @click="alterModule">Alter Module</button>
+        </div>
+        `,
         data: {
             lesson: "Lesson: Building Instance Vue",
             module: "Module: Vue Instance"
@@ -23,7 +25,6 @@
             },
             alterModule() {
                 this.module += '#'
-                console.log(this.$refs.lessonRef.innerText)
             },
 
         }
