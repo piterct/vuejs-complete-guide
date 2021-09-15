@@ -30,7 +30,8 @@
         }
     })
 
-    vm.$mount('#app')
-
-    
+    //vm.$mount('#app')
+    vm.$mount()
+    document.querySelector("#app").appendChild(vm.$el) 
+      
 </script>
