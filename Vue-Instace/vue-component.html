@@ -1,0 +1,38 @@
+<meta charset="UFF-8">
+
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <comp></comp>
+</div>
+
+<script>
+    const vm = new Vue({
+       // el:'#app',
+       el: 'comp',
+        template: `
+        <div>
+       <h1>{{lesson}}</h1>
+       <h2>{{module}}</h2>
+       <button @click="alterLesson">Alter Lesson</button>
+       <button @click="alterModule">Alter Module</button>
+        </div>
+        `,
+        data: {
+            lesson: "Lesson: Building Instance Vue",
+            module: "Module: Vue Instance"
+        },
+        methods: {
+            alterLesson() {
+                this.lesson += '#'
+
+            },
+            alterModule() {
+                this.module += '#'
+            },
+
+        }
+    })
+
+      
+</script>
