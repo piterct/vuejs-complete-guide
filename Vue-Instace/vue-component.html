@@ -4,23 +4,26 @@
 
 <div id="app">
     <comp></comp>
+    <comp></comp>
+    <comp></comp>
 </div>
 
 <script>
-    const vm = new Vue({
-       // el:'#app',
-       el: 'comp',
+    
+    Vue.component('comp', {
         template: `
-        <div>
+       <div>
        <h1>{{lesson}}</h1>
        <h2>{{module}}</h2>
        <button @click="alterLesson">Alter Lesson</button>
        <button @click="alterModule">Alter Module</button>
-        </div>
+       </div>
         `,
-        data: {
-            lesson: "Lesson: Building Instance Vue",
-            module: "Module: Vue Instance"
+        data: function () {
+            return {
+                lesson: "Lesson: Building Instance Vue",
+                module: "Module: Vue Instance"
+            }
         },
         methods: {
             alterLesson() {
@@ -34,5 +37,10 @@
         }
     })
 
-      
+    const vm = new Vue({
+        el: '#app',
+
+    })
+
+
 </script>
