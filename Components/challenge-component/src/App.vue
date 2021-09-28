@@ -23,13 +23,8 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Desafio</span>
-        <span class="font-weight-light">Componente</span>
-      </v-toolbar-title>
-    </v-app-bar>
-
+    <v-app-bar app> </v-app-bar>
+    <app-toolbar />
     <v-content>
       <app-carousel />
     </v-content>
@@ -38,10 +33,15 @@
 </template>
 
 <script>
+import Toolbar from "./Toolbar.vue";
 import Carousel from "./Carousel.vue";
 import Footer from "./Footer.vue";
 
 export default {
-  components: { "app-footer": Footer, "app-carousel": Carousel },
+  components: {
+    "app-footer": Footer,
+    "app-carousel": Carousel,
+    "app-toolbar": Toolbar,
+  },
 };
 </script>
