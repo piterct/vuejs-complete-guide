@@ -31,35 +31,17 @@
     </v-app-bar>
 
     <v-content>
-      <v-carousel>
-        <v-carousel-item
-          v-for="(item, i) in fotos"
-          :key="i"
-          :src="item.src"
-        ></v-carousel-item>
-      </v-carousel>
+      <app-carousel />
     </v-content>
-    <app-footer/>
+    <app-footer />
   </v-app>
 </template>
 
 <script>
+import Carousel from "./Carousel.vue";
 import Footer from "./Footer.vue";
+
 export default {
-  components: { "app-footer": Footer },
-  data() {
-    return {
-      itensMenu: [
-        { titulo: "Início", icon: "dashboard" },
-        { titulo: "Sobre", icon: "question_answer" },
-      ],
-      fotos: [
-        { src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg" },
-        { src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg" },
-        { src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg" },
-        { src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg" },
-      ],
-    };
-  },
+  components: { "app-footer": Footer, "app-carousel": Carousel },
 };
 </script>
