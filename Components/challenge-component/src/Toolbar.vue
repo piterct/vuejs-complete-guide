@@ -1,6 +1,6 @@
 <template>
   <v-toolbar-title class="headline text-uppercase">
-    <span>Desafio</span>
+    <span>Challenge</span>
     <span class="font-weight-light">Component</span>
   </v-toolbar-title>
 </template>
