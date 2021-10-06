@@ -17,10 +17,10 @@ import Footer from "@/components/template/Footer.vue";
 
 export default {
   components: {
-    "app-footer": Footer,
-    "app-carousel": Carousel,
-    "app-toolbar": Toolbar,
-    "app-menu": Menu,
+    appFooter: Footer,
+    appCarousel: Carousel,
+    appToolbar: Toolbar,
+    appMenu: Menu,
   },
 };
 </script>
