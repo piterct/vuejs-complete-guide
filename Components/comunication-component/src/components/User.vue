@@ -1,21 +1,21 @@
 <template>
     <div class="container">
-        <h1>Componente Usuário</h1>
-        <p>Esse é um componente muito legal!</p>
+        <h1>User component</h1>
+        <p>This component is pretty cool !!!</p>
         <hr>
         <div class="components">
-            <app-usuario-info />
+            <app-info-user />
             <app-usuario-editar />
         </div>
     </div>
 </template>
 
 <script>
-import AppUsuarioInfo from './UsuarioInfo'
+import AppInfoUser from './UsuarioInfo'
 import AppUsuarioEditar from './UsuarioEditar'
 
 export default {
-    components: { AppUsuarioInfo, AppUsuarioEditar }
+    components: { AppInfoUser, AppUsuarioEditar }
 }
 </script>
 
