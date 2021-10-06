@@ -1,20 +1,18 @@
 <template>
-    <div class="componente">
-        <h2>Alterar os Dados de Usuário</h2>
-        <p>Edite as informações</p>
-    </div>
+  <div class="component">
+    <h2>Alter the data of user</h2>
+    <p>Edit the information</p>
+  </div>
 </template>
 
 <script>
-export default {
-    
-}
+export default {};
 </script>
 
 <style scoped>
-    .componente {
-        flex: 1;
-        background-color: #98b99a;
-        color: #fff;
-    }
+.component {
+  flex: 1;
+  background-color: #98b99a;
+  color: #fff;
+}
 </style>
