@@ -12,7 +12,7 @@
 
 <script>
 import AppInfoUser from './UsuarioInfo'
-import AppEditUser from './UsuarioEditar'
+import AppEditUser from './EditUser'
 
 export default {
     components: { AppInfoUser, AppEditUser }
