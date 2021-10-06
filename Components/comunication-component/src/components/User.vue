@@ -3,7 +3,7 @@
         <h1>Componente Usuário</h1>
         <p>Esse é um componente muito legal!</p>
         <hr>
-        <div class="componentes">
+        <div class="components">
             <app-usuario-info />
             <app-usuario-editar />
         </div>
@@ -30,11 +30,11 @@ export default {
         margin: 20px 10px;
     }
 
-    .componentes {
+    .components {
         display: flex;
     }
 
-    .componentes > * {
+    .components > * {
         margin: 10px;
     }
 </style>

@@ -1,15 +1,15 @@
 <template>
 	<div id="app">
-		<app-usuario />
+		<app-user />
 	</div>
 </template>
 
 <script>
-import AppUsuario from "./components/Usuario.vue";
+import AppUser from "./components/User.vue";
 
 export default {
 	name: "app",
-	components: { AppUsuario }
+	components: { AppUser }
 }
 </script>
 
