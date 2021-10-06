@@ -5,17 +5,17 @@
         <hr>
         <div class="components">
             <app-info-user />
-            <app-usuario-editar />
+            <app-edit-user />
         </div>
     </div>
 </template>
 
 <script>
 import AppInfoUser from './UsuarioInfo'
-import AppUsuarioEditar from './UsuarioEditar'
+import AppEditUser from './UsuarioEditar'
 
 export default {
-    components: { AppInfoUser, AppUsuarioEditar }
+    components: { AppInfoUser, AppEditUser }
 }
 </script>
 
