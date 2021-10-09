@@ -2,6 +2,9 @@
   <div class="component">
     <h2>The information of user</h2>
     <p>Many details...</p>
+    <p>
+      Name User: <strong>{{ name }}</strong>
+    </p>
   </div>
 </template>
 
