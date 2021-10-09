@@ -2,6 +2,7 @@
   <div class="container">
     <h1>User component</h1>
     <p>This component is pretty cool !!!</p>
+    <button @click="alterName">Alter Name</button>
     <hr />
     <div class="components">
       <app-info-user />
@@ -16,6 +17,16 @@ import AppEditUser from "./EditUser";
 
 export default {
   components: { AppInfoUser, AppEditUser },
+  data() {
+    return {
+      name: "Michael",
+    };
+  },
+  methods: {
+    alterName() {
+       this.name = 'Ana' 
+    },
+  },
 };
 </script>
 
