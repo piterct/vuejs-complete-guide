@@ -5,7 +5,7 @@
     <button @click="alterName">Alter Name</button>
     <hr />
     <div class="components">
-      <app-info-user />
+      <app-info-user name="Pedro" />
       <app-edit-user />
     </div>
   </div>
@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     alterName() {
-       this.name = 'Ana' 
+      this.name = "Ana";
     },
   },
 };
