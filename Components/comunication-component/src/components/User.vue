@@ -12,11 +12,11 @@
 </template>
 
 <script>
-import AppInfoUser from "./InfoUser";
+import InfoUser from "./InfoUser";
 import AppEditUser from "./EditUser";
 
 export default {
-  components: { AppInfoUser, AppEditUser },
+  components: { AppInfoUser: InfoUser, AppEditUser },
   data() {
     return {
       name: "Michael",
