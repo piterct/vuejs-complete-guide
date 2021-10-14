@@ -5,6 +5,7 @@
     <p>
       Name User: <strong>{{ invertName() }}</strong>
     </p>
+    <button @click="restartName">Restart Name</button>
   </div>
 </template>
 
@@ -23,6 +24,11 @@ export default {
   methods: {
     invertName() {
       return this.name.split("").reverse().join("");
+    },
+    restartName() {
+      const oldName = "Pedro";
+      this.name = "Michael";
+      this.$emit("nameChanged", this.name);
     },
   },
 };
