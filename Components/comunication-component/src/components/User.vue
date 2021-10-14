@@ -2,10 +2,13 @@
   <div class="container">
     <h1>User component</h1>
     <p>This component is pretty cool !!!</p>
+    <p>
+      Name is <strong>{{ name }}</strong>
+    </p>
     <button @click="alterName">Alter Name</button>
     <hr />
     <div class="components">
-      <app-info-user :name="name" />
+      <app-info-user :name="name" @nameChanged="name = $event" />
       <app-edit-user />
     </div>
   </div>
