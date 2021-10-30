@@ -8,7 +8,7 @@
     <button @click="alterName">Alter Name</button>
     <hr />
     <div class="components">
-      <app-info-user :name="name" @nameChanged="name = $event" />
+      <app-info-user :name="name" @nameChanged="name = $event" :restartFn="restartName" />
       <app-edit-user />
     </div>
   </div>
@@ -29,6 +29,9 @@ export default {
     alterName() {
       this.name = "Ana";
     },
+    restartName(){
+      this.name = "Michael"
+    }
   },
 };
 </script>

@@ -6,6 +6,7 @@
       Name User: <strong>{{ invertName() }}</strong>
     </p>
     <button @click="restartName">Restart Name</button>
+    <button @click="restartFn()">Restart Name (Callback)</button>
   </div>
 </template>
 
@@ -20,6 +21,7 @@ export default {
       // return Array(10).fill(0).join(",");
       // },
     },
+    restartFn: Function,
   },
   methods: {
     invertName() {
