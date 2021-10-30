@@ -5,11 +5,19 @@
     <p>
       Name is <strong>{{ name }}</strong>
     </p>
+    <p>
+      Age is <strong>{{ age }}</strong>
+    </p>
     <button @click="alterName">Alter Name</button>
     <hr />
     <div class="components">
-      <app-info-user :name="name" @nameChanged="name = $event" :restartFn="restartName" />
-      <app-edit-user />
+      <app-info-user
+        :name="name"
+        :age="age"
+        @nameChanged="name = $event"
+        :restartFn="restartName"
+      />
+      <app-edit-user :age="age" />
     </div>
   </div>
 </template>
@@ -23,15 +31,16 @@ export default {
   data() {
     return {
       name: "Michael",
+      age: 21,
     };
   },
   methods: {
     alterName() {
       this.name = "Ana";
     },
-    restartName(){
-      this.name = "Michael"
-    }
+    restartName() {
+      this.name = "Michael";
+    },
   },
 };
 </script>

@@ -5,6 +5,7 @@
     <p>
       Name User: <strong>{{ invertName() }}</strong>
     </p>
+    
     <button @click="restartName">Restart Name</button>
     <button @click="restartFn()">Restart Name (Callback)</button>
   </div>
@@ -22,6 +23,7 @@ export default {
       // },
     },
     restartFn: Function,
+    age: Number,
   },
   methods: {
     invertName() {

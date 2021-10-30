@@ -2,11 +2,16 @@
   <div class="component">
     <h2>Alter the data of user</h2>
     <p>Edit the information</p>
+    <p>Age user: <strong> {{ age }}</strong></p>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    age: Number,
+  },
+};
 </script>
 
 <style scoped>
