@@ -2,12 +2,12 @@
   <div class="component">
     <h2>The information of user</h2>
     <p>Many details...</p>
-    <p>
-      Name User: <strong>{{ invertName() }}</strong>
-    </p>
+    <p> Name User: <strong>{{ invertName() }}</strong></p>
+    <p>Age user: <strong> {{ age }}</strong></p>
     
     <button @click="restartName">Restart Name</button>
     <button @click="restartFn()">Restart Name (Callback)</button>
+
   </div>
 </template>
 
@@ -32,7 +32,7 @@ export default {
     restartName() {
       const oldName = "Pedro";
       this.name = "Michael";
-      this.$emit("nameChanged", this.name);
+      this.$emit("changedName", this.name);
     },
   },
 };

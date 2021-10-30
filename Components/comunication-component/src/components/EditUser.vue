@@ -2,7 +2,10 @@
   <div class="component">
     <h2>Alter the data of user</h2>
     <p>Edit the information</p>
-    <p>Age user: <strong> {{ age }}</strong></p>
+    <p>
+      Age user: <strong> {{ age }}</strong>
+    </p>
+    <button @click="alterAge">Alter Age</button>
   </div>
 </template>
 
@@ -10,6 +13,12 @@
 export default {
   props: {
     age: Number,
+  },
+  methods: {
+    alterAge() {
+      this.age = 33;
+      this.$emit("changedAge", this.age);
+    },
   },
 };
 </script>

@@ -14,10 +14,11 @@
       <app-info-user
         :name="name"
         :age="age"
-        @nameChanged="name = $event"
+        @changedName="name = $event"
         :restartFn="restartName"
       />
-      <app-edit-user :age="age" />
+      <app-edit-user :age="age"
+       @changedAge="age = $event" />
     </div>
   </div>
 </template>
