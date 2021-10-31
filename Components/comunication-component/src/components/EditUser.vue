@@ -10,14 +10,16 @@
 </template>
 
 <script>
+import eventBus from "@/eventBus";
+
 export default {
   props: {
     age: Number,
   },
   methods: {
     alterAge() {
-      this.age = 33;
-      this.$emit("changedAge", this.age);
+      this.age += 1;
+      eventBus.$emit("changedAge", this.age);
     },
   },
 };

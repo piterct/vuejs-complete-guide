@@ -2,16 +2,21 @@
   <div class="component">
     <h2>The information of user</h2>
     <p>Many details...</p>
-    <p> Name User: <strong>{{ invertName() }}</strong></p>
-    <p>Age user: <strong> {{ age }}</strong></p>
-    
+    <p>
+      Name User: <strong>{{ invertName() }}</strong>
+    </p>
+    <p>
+      Age user: <strong> {{ age }}</strong>
+    </p>
+
     <button @click="restartName">Restart Name</button>
     <button @click="restartFn()">Restart Name (Callback)</button>
-
   </div>
 </template>
 
 <script>
+import eventBus from "@/eventBus";
+
 export default {
   props: {
     name: {
@@ -34,6 +39,11 @@ export default {
       this.name = "Michael";
       this.$emit("changedName", this.name);
     },
+  },
+  created() {
+    eventBus.$on("changedAge", (age) => {
+      this.age = age;
+    });
   },
 };
 </script>

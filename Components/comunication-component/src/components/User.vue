@@ -18,7 +18,7 @@
         :restartFn="restartName"
       />
       <app-edit-user :age="age"
-       @changedAge="age = $event" />
+       />
     </div>
   </div>
 </template>
