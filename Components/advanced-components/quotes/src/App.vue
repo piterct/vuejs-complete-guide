@@ -1,32 +1,37 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+	<div id="app">
+		<Quotes />
+		<About />
+	</div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import Quotes from './components/Quotes'
+import About from './components/About'
+
+export default {
+	components: { Quotes, About }
 }
+</script>
 
-#nav {
-  padding: 30px;
+<style>
+	#app {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		font-size: 1.6rem;
+	}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+	button {
+        outline: none;
+        padding: 5px 15px 10px;
+        margin: 10px 5px;
+        border-radius: 3px;
+        font-size: 2rem;
+        font-weight: 300;
+        color: #FFF;
+        background-color: rgba(0, 0, 0, .5);
     }
-  }
-}
 </style>
