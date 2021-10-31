@@ -41,7 +41,7 @@ export default {
     },
   },
   created() {
-    eventBus.$on("changedAge", (age) => {
+    eventBus.whenChangedAge((age) => {
       this.age = age;
     });
   },
