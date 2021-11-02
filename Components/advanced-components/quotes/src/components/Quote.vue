@@ -1,7 +1,7 @@
 <template>
   <div class="quote">
     <slot name="author"></slot>
-    <slot name="text"></slot>
+    <slot></slot>
     <slot name="font"></slot>
   </div>
 </template>

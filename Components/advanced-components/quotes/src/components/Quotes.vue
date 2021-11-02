@@ -6,7 +6,7 @@
     </span>
     <quote>
       <h1 slot="author">{{ quotes[index].author }}</h1>
-      <p slot="text">{{ quotes[index].text }}</p>
+      <p>{{ quotes[index].text }}</p>
       <h6 slot="font">{{ quotes[index].font }}</h6>
     </quote>
   </div>
