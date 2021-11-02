@@ -4,7 +4,9 @@
       <button @click="number--">&lt;</button>
       <button @click="number++">&gt;</button>
     </span>
-    {{ quotes[index].text }}
+    <quote>
+      <p>{{ quotes[index].text }}</p>
+    </quote>
   </div>
 </template>
 
