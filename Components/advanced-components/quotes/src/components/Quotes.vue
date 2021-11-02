@@ -5,9 +5,11 @@
       <button @click="number++">&gt;</button>
     </span>
     <quote>
-      <h1 slot="author">{{ quotes[index].author }}</h1>
-      <p>{{ quotes[index].text }}</p>
       <h6 slot="font">{{ quotes[index].font }}</h6>
+      <p>{{ quotes[index].text }}</p>
+      <div class="author">
+        <h1 slot="author">{{ quotes[index].author }}</h1>
+      </div>
     </quote>
   </div>
 </template>
@@ -52,5 +54,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.author {
+  float: right;
 }
 </style>
