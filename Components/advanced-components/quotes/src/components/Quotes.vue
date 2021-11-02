@@ -9,7 +9,10 @@
 </template>
 
 <script>
+import Quote from "./Quote";
+
 export default {
+  components: { Quote },
   data() {
     return {
       number: 0,
