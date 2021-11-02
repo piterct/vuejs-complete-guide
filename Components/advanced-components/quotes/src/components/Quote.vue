@@ -15,4 +15,8 @@ export default {};
   padding: 25px;
   max-width: 450px;
 }
+
+/*.quoteh1 {
+    color:red!important;
+} */
 </style>
