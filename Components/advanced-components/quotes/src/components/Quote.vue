@@ -1,13 +1,11 @@
 <template>
   <div class="quote">
-
+    <slot></slot>
   </div>
 </template>
 
 <script>
-export default {
-
-};
+export default {};
 </script>
 
 <style scoped>
