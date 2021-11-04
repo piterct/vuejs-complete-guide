@@ -39,7 +39,7 @@ export default {
 		font-size: 1.3rem;
 	}
 
-    .caixa {
+    .box {
         color: #FFF;
         font-size: 1.8rem;
         padding: 25px;
