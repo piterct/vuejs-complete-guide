@@ -1,6 +1,6 @@
 <template>
   <div class="box red">
-    
+    <slot/>
   </div>
 </template>
 

@@ -1,20 +1,16 @@
 <template>
   <div id="app">
     <span>
-      <button class="red">Load Red Component</button>
-      <button class="green">Load Green Component</button>
-      <button class="blue">Load Blue Component</button>
+      <button class="red" @click="component = 'Red'">Load Red Component</button>
+      <button class="green" @click="component = 'Green'">Load Green Component </button>
+      <button class="blue" @click="component = 'Blue'">Load Blue Component</button>
     </span>
 
-    <Red>
-      <p>Content of Component<strong>Red</strong></p>
-    </Red>
-    <Green>
-      <p>Content of Component <strong>Green</strong></p>
-    </Green>
-    <Blue>
-      <p>Content of Component <strong>Blue</strong></p>
-    </Blue>
+    <component :is="component">
+      <span
+        >Content of Component<strong> {{ component }}</strong></span
+      >
+    </component>
   </div>
 </template>
 
@@ -26,6 +22,11 @@ import Blue from "./components/Blue.vue";
 export default {
   name: "app",
   components: { Red, Green, Blue },
+  data() {
+    return {
+      component: "Red",
+    };
+  },
 };
 </script>
 
