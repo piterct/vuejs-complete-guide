@@ -8,7 +8,7 @@
 
     <component :is="component">
       <span
-        >Content of Component<strong> {{ component }}</strong></span
+       slot="content" >Content of Component<strong> {{ component }}</strong></span
       >
     </component>
   </div>

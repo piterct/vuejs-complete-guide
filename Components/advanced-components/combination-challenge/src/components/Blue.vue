@@ -1,15 +1,12 @@
 <template>
-    <div class="box blue">
-    <slot/>
-    </div>
+  <div class="box blue">
+    <slot name="content" />
+  </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style scoped>
-
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="box green">
-  <slot/>
-    </div>
+    <slot name="content" />
+  </div>
 </template>
 
 <script>
