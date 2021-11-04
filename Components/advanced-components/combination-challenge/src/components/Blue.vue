@@ -1,6 +1,6 @@
 <template>
     <div class="box blue">
-        Content of Blue Component
+  
     </div>
 </template>
 

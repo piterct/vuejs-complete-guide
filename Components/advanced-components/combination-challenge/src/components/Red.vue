@@ -1,5 +1,7 @@
 <template>
-  <div class="box red">Content of Red Component</div>
+  <div class="box red">
+    
+  </div>
 </template>
 
 <script>

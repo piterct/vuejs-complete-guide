@@ -1,5 +1,7 @@
 <template>
-  <div class="box green">Content of Green Component</div>
+  <div class="box green">
+
+    </div>
 </template>
 
 <script>
