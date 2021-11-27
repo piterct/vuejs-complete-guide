@@ -24,7 +24,7 @@ export default {
     addTask(task) {
       const sameName = t => t.name.toUpperCase() === task.name.toUpperCase()
       const reallyNew = this.tasks.filter(sameName).length === 0
-      if (reallyNew)
+      if (reallyNew && task.name != "")
         this.tasks.push({
           name: task.name,
           pending: task.pending || true

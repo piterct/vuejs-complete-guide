@@ -1,7 +1,7 @@
 <template>
   <div class="new-task">
-    <input v-model="name" @keydown.enter="add" type="text" />
-    <button @click="add">+</button>
+    <input v-model="name" @keydown.enter="add" type="text" class="form-element" placeholder="New Task?" />
+    <button class="form-element" @click="add">+</button>
   </div>
 </template>
 
@@ -21,5 +21,32 @@ export default {
 };
 </script>
 
-<style >
+<style>
+.new-task{
+    margin: 35px;
+}
+
+.form-element{
+    outline: none;
+    font-size: 2rem;
+    border: 1px solid #fff;
+    padding: 5px 10px 8px;
+    color: #FFF;
+}
+
+input.form-element{
+    width: 500px;
+    background: #FFF2;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+button.form-element{
+border-left: none;
+background-color: #2196f3;
+border-top-right-radius: 8px;
+border-bottom-right-radius: 8px;
+
+}
+
 </style>

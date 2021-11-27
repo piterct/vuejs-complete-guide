@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style >
-.task.grid {
+.task-grid {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
