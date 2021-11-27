@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Tasks</h1>
-    <TasksProgress :progress="progress"/>
+    <TasksProgress :progress="progress" />
     <NewTask @taskAdded="addTask" />
     <TaskGrid
       @taskDeleted="deleteTask"
@@ -30,6 +30,14 @@ export default {
       return Math.round((done / total) * 100) || 0;
     },
   },
+  watch: {
+    tasks: {
+      deep: true,
+      handler() {
+        localStorage.setItem("tasks", JSON.stringify(this.tasks));
+      },
+    },
+  },
   methods: {
     addTask(task) {
       const sameName = (t) => t.name.toUpperCase() === task.name.toUpperCase();
@@ -46,6 +54,11 @@ export default {
     toggleTaskState(i) {
       this.tasks[i].pending = !this.tasks[i].pending;
     },
+  },
+  created() {
+    const json = localStorage.getItem("tasks");
+    const array = JSON.parse(json);
+    this.tasks = Array.isArray(array) ? array : [];
   },
 };
 </script>
