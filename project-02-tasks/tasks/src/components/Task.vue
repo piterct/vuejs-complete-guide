@@ -1,5 +1,6 @@
 <template>
   <div class="task" :class="stateClass">
+    <span  @click="$emit('taskDeleted',task)" class="close">x</span>
     <p>{{ task.name }}</p>
   </div>
 </template>
@@ -12,10 +13,10 @@ export default {
   },
   computed: {
     stateClass() {
-        return{
-            pending: this.task.pending,
-            done: !this.task.pending
-        }
+      return {
+        pending: this.task.pending,
+        done: !this.task.pending,
+      };
     },
   },
 };
@@ -23,27 +24,47 @@ export default {
 
 <style >
 .task {
-    box-sizing: border-box;
-    width: 350px;
-    height: 150px;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 2rem;
-    font-weight: 300;
-    cursor: pointer;
-    user-select: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  width: 350px;
+  height: 150px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 2rem;
+  font-weight: 300;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .pending {
-    border-left: 12px solid #b73229;
-    background-color: #F44336;
+  border-left: 12px solid #b73229;
+  background-color: #f44336;
 }
 .done {
-    color: #DDD;
-    border-left: 12px solid #0A8F08;
-    background-color: #4CAF50;
-    text-decoration: line-through;
+  color: #ddd;
+  border-left: 12px solid #0a8f08;
+  background-color: #4caf50;
+  text-decoration: line-through;
+}
+.pending .close {
+  background-color: #b73229;
+}
+
+.done .close {
+  background-color: #0a8f08;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 0.9rem;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
 }
 </style>

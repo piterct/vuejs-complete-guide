@@ -2,7 +2,7 @@
   <div id="app">
     <h1>Tasks</h1>
     <NewTask @taskAdded="addTask" />
-    <TaskGrid :tasks="tasks" />
+    <TaskGrid @taskDeleted="deleteTask" :tasks="tasks" />
   </div>
 </template>
 
@@ -14,21 +14,21 @@ export default {
   components: { NewTask, TaskGrid },
   data() {
     return {
-      tasks: [
-        { name: "Wash Dishes", pending: false },
-        { name: "Buy Jacket", pending: true },
-      ],
+      tasks: [],
     };
   },
   methods: {
     addTask(task) {
-      const sameName = t => t.name.toUpperCase() === task.name.toUpperCase()
-      const reallyNew = this.tasks.filter(sameName).length === 0
+      const sameName = (t) => t.name.toUpperCase() === task.name.toUpperCase();
+      const reallyNew = this.tasks.filter(sameName).length === 0;
       if (reallyNew && task.name != "")
         this.tasks.push({
           name: task.name,
-          pending: task.pending || true
+          pending: task.pending || true,
         });
+    },
+    deleteTask(i) {
+     this.tasks.splice(i, 1);
     },
   },
 };
