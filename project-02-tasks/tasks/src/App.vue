@@ -1,22 +1,35 @@
 <template>
   <div id="app">
     <h1>Tasks</h1>
+    <NewTask @taskAdded="addTask" />
     <TaskGrid :tasks="tasks" />
   </div>
 </template>
 
 <script>
+import NewTask from "./components/NewTask.vue";
 import TaskGrid from "./components/TaskGrid.vue";
 
 export default {
-  components: { TaskGrid },
+  components: { NewTask, TaskGrid },
   data() {
     return {
       tasks: [
-       { name: "Wash Dishes", pending: false },
+        { name: "Wash Dishes", pending: false },
         { name: "Buy Jacket", pending: true },
       ],
     };
+  },
+  methods: {
+    addTask(task) {
+      const sameName = t => t.name.toUpperCase() === task.name.toUpperCase()
+      const reallyNew = this.tasks.filter(sameName).length === 0
+      if (reallyNew)
+        this.tasks.push({
+          name: task.name,
+          pending: task.pending || true
+        });
+    },
   },
 };
 </script>
